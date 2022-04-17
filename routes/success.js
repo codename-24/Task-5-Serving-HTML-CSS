@@ -6,9 +6,9 @@ const rootDir = require('../util/path');
 
 const router = express.Router();
 
-router.get('/success', (req, res, next) => {
-  res.sendFile(path.join(rootDir, 'views', 'success.html'));
-});
+const successController = require('../controllers/contact');
+
+router.get('/success', successController.getSuccessPage);
 
 
 module.exports = router;
